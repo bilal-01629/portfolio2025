@@ -1,132 +1,156 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/work.css">
     <title>Works</title>
 </head>
 
 <body id="content">
-    <header>
-        <nav>
-            <ul>
-                <li><a class="nav-link" href="./index.html">Home</a></li>
-                <li><a class="nav-link nav-active" href="./works.html">Works</a></li>
-                <li><a class="nav-link" href="./about.html">About me</a></li>
-                <li><a class="nav-link" href="./contact.html"> Contact</a></li>
-            </ul>
+    <!-- Header -->
+    <header class="works-header">
+        <div class="header-left">
+            <div class="brand-logo">
+                <img src="./images/Logo.png" alt="Logo" class="logo-image">
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="./index.html" class="nav-link">Home</a>
+            <span class="nav-separator">/</span>
+            <a href="./works.html" class="nav-link nav-active">Works</a>
+            <span class="nav-separator">/</span>
+            <a href="./contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
 
-   
+    <main class="works-main">
+        <!-- GAME RELATED PROJECTS -->
+        <section class="game-projects">
+            
+            <!-- Featured Project: Odysseus -->
+            <div class="game-featured">
+                <h2 class="section-title">My Game related projects</h2>
+                <div class="odysseus-card work-card">
+                    <img src="./images/odysseus-cabine.png" alt="Odysseus">
+                    <div class="work-card-overlay odysseus-overlay">
+                        <h3 class="odysseus-title">Odysseus</h3>
+                        <div class="discover-wrapper">
+                            <a href="#" class="discover-btn circular">
+                                <span class="play-icon">▶</span>
+                            </a>
+                            <a href="#" class="discover-more-text">DISCOVER MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- GAME RELATED PROJECTS -->
-<section class="game-projects">
+            <!-- Small Project Cards -->
+            <div class="game-small-grid">
+                <div class="game-card work-card">
+                    <img src="./images/11.png" alt="Project">
+                    <div class="work-card-overlay">
+                        <h4 class="card-name">Name</h4>
+                        <a href="#" class="discover-btn-small">
+                            <span class="discover-icon-circle">></span>
+                            <span class="discover-btn-text">DISCOVER</span>
+                        </a>
+                    </div>
+                </div>
 
-    
-    <!-- FEATURED PROJECT -->
-    <div class="game-featured">
-        <h2 class="game-title">My Game related projects</h2>
-      <img src="./images/odysseus-cabine.png" alt="Odysseus">
-      <div class="game-overlay">
-        <h3>Odysseus</h3>
-        <a href="#" class="discover-more">
-          <span>DISCOVER MORE</span>
-          <span class="arrow">›</span>
-        </a>
-      </div>
-    </div>
-  
-    <!-- SMALL PROJECTS -->
-    <div class="game-small-grid">
-  
-      <div class="game-card">
-        <img src="./images/neon.png" alt="">
-        <div class="game-card-info">
-          <span>Name</span>
-          <a href="#" class="game-btn small">Discover</a>
+                <div class="game-card work-card">
+                    <img src="./images/neon.png" alt="Project">
+                    <div class="work-card-overlay">
+                        <h4 class="card-name">Name</h4>
+                        <a href="#" class="discover-btn-small">
+                            <span class="discover-icon-circle">></span>
+                            <span class="discover-btn-text">DISCOVER</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="plus-icon">
+                    <span>+</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOME OTHER WORKS -->
+        <section class="other-works">
+            <h2 class="section-title">Some other works</h2>
+            <p class="other-works-text">
+                Lorem ipsum dolor sit amet. Ut sequi ipsa et autem assumenda sit tempora cumque qui quasi quia et consectetur similique. Et inventore dicta qui inventore quod quo officiis eius. Et assumenda maxime id deserunt corrupti non molestias nisi ea officiis deserunt sit rerum quia.
+            </p>
+
+            <div class="other-works-grid">
+                <div class="other-card work-card">
+                    <img src="./images/neon.png" alt="Project">
+                    <div class="work-card-overlay">
+                        <h4 class="card-name">Name</h4>
+                        <a href="#" class="discover-btn-small">
+                            <span class="discover-icon-circle">></span>
+                            <span class="discover-btn-text">DISCOVER</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other-card work-card">
+                    <img src="./images/IMG_32.png" alt="Project">
+                    <div class="work-card-overlay">
+                        <h4 class="card-name">Name</h4>
+                        <a href="#" class="discover-btn-small">
+                            <span class="discover-icon-circle">></span>
+                            <span class="discover-btn-text">DISCOVER</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other-card work-card">
+                    <img src="./images/IMG_2630.JPG" alt="Project">
+                    <div class="work-card-overlay">
+                        <h4 class="card-name">Name</h4>
+                        <a href="#" class="discover-btn-small">
+                            <span class="discover-icon-circle">></span>
+                            <span class="discover-btn-text">DISCOVER</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="other-card work-card bottom-left">
+                    <img src="./images/poisson.png" alt="Project">
+                    <div class="work-card-overlay">
+                        <h4 class="card-name">Name</h4>
+                        <a href="#" class="discover-btn-small">
+                            <span class="discover-icon-circle">></span>
+                            <span class="discover-btn-text">DISCOVER</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="works-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3 class="footer-heading">Mention légales</h3>
+                <p class="footer-text">
+                    Lorem ipsum dolor sit amet. Ut sequi ipsa et autem assumenda sit tempora cumque qui quasi quia et consectetur similique. Et inventore dicta qui inventore quod quo officiis eius.
+                </p>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact</h3>
+                <p class="footer-text">
+                    Lorem ipsum dolor sit amet. Ut sequi ipsa et autem assumenda sit tempora cumque qui quasi quia et consectetur similique.
+                </p>
+            </div>
         </div>
-      </div>
-  
-      <div class="game-card">
-        <img src="./images/morph.png" alt="">
-        <div class="game-card-info">
-          <span>Name</span>
-          <a href="#" class="game-btn small">Discover</a>
+        <div class="footer-brand">
+            <span class="footer-brand-text">THEETY</span>
+            <img src="./images/star.png" alt="Star" class="footer-star">
         </div>
-      </div>
-  
-    </div>
-  
-  </section>
-  
-
-
-    <div class="container">
-        <div class="content-row">
-            <div class="content-column-4">
-                <a href="./works_discover/discover_photo.html" class="black-image-mask">
-                  <img src="./images/IMG_2.png" alt="Preview-photo" class="card-img">
-                </a>
-                <div class="card-container">
-                  <h3>Photographie</h3>
-                  <p class="nulla-text">Quelques exemples de photo.</p>
-                  <a href="./works_discover/discover_photo.html" class="btn">Découvrir</a>
-                </div>
-            </div>
-            <div class="content-column-4">
-                <a href="./works.html#illu" class="black-image-mask">
-                    <img src="./images/neon.png" alt="Preview-illustrator" class="card-img">
-                </a>
-                <div class="card-container">
-                    <h3>Illustrator</h3>
-                    <p class="nulla-text">Série de champignons mixé avec des personnages connus.</p>
-                    <a href="./works.html#illu" class="btn">Découvrir</a>
-                </div>
-            </div>
-            <div class="content-column-4">
-                <a href="./works.html#photoshop" class="black-image-mask">
-                    <img src="./images/morph.png" alt="Preview-photoshop" class="card-img">
-                </a>
-                <div class="card-container">
-                    <h3>Photoshop</h3>
-                    <p class="nulla-text">Plusieurs projet photoshop indépendant.</p>
-                    <a href="./works.html#photoshop" class="btn">Découvrir</a>
-                </div>
-            </div>
-            <div class="content-column-4">
-                <a href="./works.html#film" class="black-image-mask">
-                  <img src="./images/poisson.png" alt="Preview-film" class="card-img">
-                </a>
-                <div class="card-container">
-                  <h3>Film</h3>
-                  <p class="nulla-text">Projet de film pocket et à la caméra</p>
-                  <a href="./works.html#film" class="btn">Découvrir</a>
-                </div>
-            </div>
-            <div class="content-column-4">
-                <a href="./works.html#web" class="black-image-mask">
-                    <img src="./images/severus-home.png" alt="Preview-web" class="card-img">
-                </a>
-                <div class="card-container">
-                    <h3>Site Web</h3>
-                    <p class="nulla-text">Creer le site web d'un institut.</p>
-                    <a href="./works.html#web" class="btn">Découvrir</a>
-                </div>
-            </div>
-            <div class="content-column-4">
-                <a href="./works.html#dessin" class="black-image-mask">
-                    <img src="./images/IMG_2630.JPG" alt="Preview-dessin" class="card-img">
-                </a>
-                <div class="card-container">
-                    <h3>Dessin</h3>
-                    <p class="nulla-text">Projet personnel de dessin.</p>
-                    <a href="./works.html#dessin" class="btn">Découvrir</a>
-                </div>
-            </div>
-        </div>        
-    </div>
+    </footer>
 
 </body>
-
 </html>

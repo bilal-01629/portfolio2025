@@ -163,6 +163,133 @@ body#content {
     gap: 12px;
 }
 
+/* Merged Discover Button - Elegant Design */
+.discover-btn-merged {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    height: 50px;
+    padding: 0;
+    z-index: 1;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* Expanding White Background on Hover - Step 1 */
+.discover-btn-merged::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.discover-btn-merged:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icon Container - White Circular Background */
+.discover-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    transition: border-radius 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease 0.2s,
+                width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discover-btn-merged:hover .discover-icon-container {
+    border-radius: 25px 0 0 25px;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+}
+
+/* Short Arrow Icon - Default State */
+.discover-arrow-short {
+    position: absolute;
+    font-size: 22px;
+    color: #3F2E7A;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Full Arrow Icon - Hover State */
+.discover-arrow-full {
+    position: absolute;
+    font-size: 22px;
+    color: #3F2E7A;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0;
+    transform: translateX(-4px) scale(0.9);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text - White by default */
+.discover-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    font-family: 'Roboto Mono', monospace;
+    white-space: nowrap;
+    padding: 0 20px 0 12px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.discover-btn-merged:hover .discover-text {
+    transform: translateX(1px);
+}
+
+/* Hover State - Step 2: Arrow Replacement */
+.discover-btn-merged:hover .discover-arrow-short {
+    opacity: 0;
+    transform: translateX(4px) scale(0.9);
+    transition-delay: 0.2s;
+}
+
+.discover-btn-merged:hover .discover-arrow-full {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition-delay: 0.2s;
+}
+
+.discover-btn-merged:hover .discover-text {
+    color: #3F2E7A;
+    transition-delay: 0.15s;
+}
+
+/* Legacy styles for backward compatibility */
 .discover-btn.circular {
     display: flex;
     align-items: center;
@@ -255,6 +382,135 @@ body#content {
     margin: 0;
 }
 
+/* Small Discover Button - Elegant Design */
+.discover-btn-small-merged {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    height: 36px;
+    padding: 0;
+    z-index: 1;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+
+/* Expanding White Background on Hover - Step 1 */
+.discover-btn-small-merged::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 18px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.discover-btn-small-merged:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icon Container - White Circular Background (Small) */
+.discover-icon-container-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    background-color: #fff;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    transition: border-radius 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease 0.2s,
+                width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discover-btn-small-merged:hover .discover-icon-container-small {
+    border-radius: 18px 0 0 18px;
+    background-color: transparent;
+    width: 36px;
+    height: 36px;
+}
+
+/* Short Arrow Icon - Default State (Small) */
+.discover-arrow-short-small {
+    position: absolute;
+    font-size: 14px;
+    color: #3F2E7A;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Full Arrow Icon - Hover State (Small) */
+.discover-arrow-full-small {
+    position: absolute;
+    font-size: 14px;
+    color: #3F2E7A;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0;
+    transform: translateX(-3px) scale(0.9);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text - White by default (Small) */
+.discover-text-small {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    font-family: 'Roboto Mono', monospace;
+    white-space: nowrap;
+    padding: 0 14px 0 8px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.discover-btn-small-merged:hover .discover-text-small {
+    transform: translateX(1px);
+}
+
+/* Hover State - Step 2: Arrow Replacement (Small) */
+.discover-btn-small-merged:hover .discover-arrow-short-small {
+    opacity: 0;
+    transform: translateX(3px) scale(0.9);
+    transition-delay: 0.2s;
+}
+
+.discover-btn-small-merged:hover .discover-arrow-full-small {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition-delay: 0.2s;
+}
+
+.discover-btn-small-merged:hover .discover-text-small {
+    color: #3F2E7A;
+    transition-delay: 0.15s;
+}
+
+/* Legacy styles for backward compatibility */
 .discover-btn-small {
     display: flex;
     align-items: center;

@@ -397,16 +397,6 @@ body#content {
 }
 
 @media (max-width: 968px) {
-    .works-header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    .header-nav {
-        align-self: flex-end;
-    }
-    
     .works-main {
         padding: 0 20px 60px;
     }
@@ -432,10 +422,6 @@ body#content {
 @media (max-width: 768px) {
     .works-main {
         padding: 0 15px 60px;
-    }
-    
-    .works-header {
-        padding: 15px;
     }
     
     .odysseus-title {
@@ -481,4 +467,53 @@ body#content {
     .other-works-text {
         padding: 0 10px;
     }
+}
+
+@media (max-width: 480px) {
+    .works-main {
+        padding: 0 10px 50px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .odysseus-title {
+        font-size: 28px;
+    }
+    
+    .discover-btn.circular {
+        width: 80px;
+        height: 80px;
+        font-size: 8px;
+    }
+    
+    .discover-more-text {
+        font-size: 12px;
+    }
+    
+    .game-card,
+    .other-card {
+        max-width: 100%;
+    }
+    
+    .work-card-overlay h4 {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   MOBILE TOUCH EVENT FIXES
+   ============================================ */
+
+/* Ensure all interactive elements are touchable */
+.discover-btn,
+.discover-btn.circular,
+.discover-btn-small,
+.discover-more-text,
+.discover-btn-text,
+.work-card-overlay a {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }

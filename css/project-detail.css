@@ -185,7 +185,7 @@ body#content {
     background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
     color: #2a2a2a;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 25px;
     font-size: 16px;
     font-weight: 600;
     font-family: 'Roboto Mono', monospace;
@@ -199,11 +199,10 @@ body#content {
 }
 
 .try-it-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
     fill: #2a2a2a;
-    transform: rotate(-90deg); /* Rotate to point down */
 }
 
 /* Responsive Design */

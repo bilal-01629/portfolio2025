@@ -11,7 +11,9 @@
 <body id="content">
     <header class="main-header">
         <div class="header-logo">
-            <img src="./images/Logo.png" alt="Logo" class="logo-image">
+            <a href="./index.html" aria-label="Go to Home">
+                <img src="./images/Logo.png" alt="Logo" class="logo-image">
+            </a>
         </div>
         <button class="hamburger-menu" aria-label="Toggle menu">
             <span></span>
@@ -127,6 +129,30 @@
         </div>
     </footer>
 
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <div class="mobile-bottom-nav-container">
+            <ul class="mobile-bottom-nav-list">
+                <li class="mobile-bottom-nav-item">
+                    <a href="./index.html" class="mobile-bottom-nav-link" data-page="home">Home</a>
+                </li>
+                <li class="mobile-bottom-nav-item">
+                    <span class="mobile-bottom-nav-separator">/</span>
+                </li>
+                <li class="mobile-bottom-nav-item">
+                    <a href="./works.html" class="mobile-bottom-nav-link" data-page="works">Works</a>
+                </li>
+                <li class="mobile-bottom-nav-item">
+                    <span class="mobile-bottom-nav-separator">/</span>
+                </li>
+                <li class="mobile-bottom-nav-item">
+                    <a href="./contact.html" class="mobile-bottom-nav-link" data-page="contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/mobile-bottom-nav.js"></script>
 </body>
 </html>

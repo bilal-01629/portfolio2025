@@ -432,6 +432,20 @@ h3 {
     pointer-events: auto;
 }
 
+.header-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-logo a:hover {
+    opacity: 0.8;
+}
+
 .logo-image {
     height: 120px;
     width: auto;
@@ -1100,16 +1114,33 @@ li {
         align-items: stretch;
     }
     
+    /* Reorder: Image first, then text, then button */
+    .about-image-column {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        order: 1;
+    }
+    
+    .about-avatar {
+        max-width: 100%;
+        max-width: 350px;
+    }
+    
     .about-text-column {
         max-width: 100%;
         align-items: center;
         padding: 0 10px;
+        order: 2;
+        display: flex;
+        flex-direction: column;
     }
     
     .about-text {
         font-size: 18px;
         text-align: left;
         margin-bottom: 30px;
+        order: 1;
     }
 
     .cv-button {
@@ -1117,17 +1148,7 @@ li {
         padding: 12px 24px;
         margin-top: 15px;
         align-self: center;
-    }
-    
-    .about-image-column {
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
-    }
-    
-    .about-avatar {
-        max-width: 100%;
-        max-width: 350px;
+        order: 2;
     }
 
     .footer-info-row {
@@ -1195,11 +1216,13 @@ li {
     }
 
     .greeting-text {
-        font-size: 36px;
+        padding-top: 20px;
+        font-size: 26px;
     }
 
     .nickname-text {
-        font-size: 36px;
+        padding-bottom: 15px;
+        font-size: 26px;
     }
 
     .about-section {
@@ -1214,10 +1237,22 @@ li {
     .about-content {
         gap: 30px;
     }
+    
+    /* Maintain order: Image first, then text, then button */
+    .about-image-column {
+        order: 1;
+    }
+    
+    .about-text-column {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+    }
 
     .about-text {
         font-size: 16px;
         margin-bottom: 25px;
+        order: 1;
     }
 
     .cv-button {
@@ -1225,6 +1260,7 @@ li {
         padding: 10px 20px;
         margin-top: 10px;
         align-self: center;
+        order: 2;
     }
 
     .about-avatar {
@@ -1725,6 +1761,175 @@ body#home::before,
 
 .mobile-sidebar::before {
     pointer-events: none;
+}
+
+/* ============================================
+   MOBILE BOTTOM NAVIGATION BAR
+   Floating bottom nav for mobile devices only
+   ============================================ */
+
+.mobile-bottom-nav {
+    display: none;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    padding: 0 20px 16px;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    pointer-events: none;
+    box-sizing: border-box;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+.mobile-bottom-nav-container {
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto;
+    background-color: rgba(20, 18, 29, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 12px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    position: relative;
+}
+
+.mobile-bottom-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+}
+
+.mobile-bottom-nav-item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-bottom-nav-separator {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 12px;
+    opacity: 0.6;
+    font-family: Roboto Mono;
+}
+
+.mobile-bottom-nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    font-family: Roboto Mono;
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-bottom-nav-link:hover {
+    opacity: 1;
+    font-weight: 500;
+}
+
+.mobile-bottom-nav-link.mobile-nav-active {
+    font-weight: 700;
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Show bottom nav only on mobile */
+@media (max-width: 768px) {
+    .mobile-bottom-nav {
+        display: block;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    /* Add bottom padding to body to prevent content from being hidden behind nav */
+    body#home,
+    body#content {
+        padding-bottom: calc(90px + env(safe-area-inset-bottom));
+    }
+    
+    /* Hide hamburger menu on mobile since we have bottom nav */
+    .hamburger-menu {
+        display: none;
+    }
+    
+    /* Hide mobile sidebar on mobile since we have bottom nav */
+    .mobile-sidebar {
+        display: none !important;
+    }
+    
+    .sidebar-overlay {
+        display: none !important;
+    }
+}
+
+/* Adjust for smaller mobile screens */
+@media (max-width: 480px) {
+    .mobile-bottom-nav {
+        padding: 0 16px 12px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+        position: fixed !important;
+        bottom: 0 !important;
+    }
+    
+    .mobile-bottom-nav-container {
+        padding: 10px 16px;
+        border-radius: 20px;
+    }
+    
+    .mobile-bottom-nav-link {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    
+    .mobile-bottom-nav-separator {
+        font-size: 16px;
+        padding: 0 8px;
+    }
+    
+    body#home,
+    body#content {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    .mobile-bottom-nav-link {
+        font-size: 13px;
+        padding: 8px 8px;
+    }
+    
+    .mobile-bottom-nav-separator {
+        font-size: 14px;
+        padding: 0 6px;
+    }
 }
 
 

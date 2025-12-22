@@ -40,6 +40,16 @@ body#content {
     color: #ffffff;
     margin: 30px 0 30px 0;
     font-family: 'Roboto Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title-star {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* Game Projects Section */
@@ -677,11 +687,84 @@ body#content {
 
 @media (max-width: 768px) {
     .works-main {
-        padding: 0 15px 60px;
+        padding: 0 20px 60px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+        margin: 20px 0 20px 0;
+        gap: 8px;
+    }
+    
+    .section-title-star {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .game-projects {
+        margin-bottom: 60px;
+    }
+    
+    .game-featured {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    /* Allow odysseus card overlay to overflow downward on mobile */
+    .odysseus-card.work-card {
+        overflow: visible !important;
+    }
+    
+    .odysseus-card img {
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
     }
     
     .odysseus-title {
-        font-size: 36px;
+        font-size: 32px;
+    }
+    
+    /* CTA strip: wider width, centered, half on card half below */
+    .odysseus-overlay {
+        width: 75% !important;
+        padding: 16px 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(40px);
+        border-radius: 24px;
+    }
+    
+    .odysseus-title {
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    .discover-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .discover-btn-merged {
+        height: 44px;
+    }
+    
+    .discover-icon-container {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .discover-text {
+        font-size: 11px;
+        padding: 0 16px 0 10px;
     }
     
     .discover-btn.circular {
@@ -691,51 +774,196 @@ body#content {
     }
     
     .game-small-grid {
-        flex-direction: column;
+        flex-direction: row;
         padding-left: 0;
-        align-items: center;
+        align-items: start;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 60px;
+        padding-bottom: 40px;
     }
     
     .game-card {
-        flex: 1 1 100%;
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+        height: auto;
+        aspect-ratio: 1;
+        overflow: hidden !important; /* Keep overlay inside card on mobile */
+    }
+    
+    .game-card img {
+        height: 100%;
+        width: 100%;
+    }
+    
+    /* Position overlay at bottom for mobile small cards */
+    .game-card .work-card-overlay {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
         max-width: 100%;
+        padding: 12px;
+        gap: 8px;
+        background-color: rgba(26, 14, 45, 0.95);
+        border-radius: 0 0 12px 12px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Hide DISCOVER text on small cards, show only arrow */
+    .discover-text-small {
+        display: none;
+    }
+    
+    .discover-icon-container-small {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+    
+    .discover-btn-small-merged {
+        height: 32px;
+        padding: 0;
+    }
+    
+    .card-name {
+        font-size: 14px;
+        margin-bottom: 4px;
     }
     
     .plus-icon {
-        position: static;
-        transform: none;
-        align-self: center;
-        margin-top: 20px;
-        right: auto;
+        display: none; /* Hide plus icon on mobile */
     }
     
     .other-works-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
         padding: 0 10px;
+        gap: 16px;
+    }
+    
+    .other-card {
+        overflow: hidden !important; /* Keep overlay inside card on mobile */
+    }
+    
+    /* Position overlay at bottom for mobile other cards */
+    .other-card .work-card-overlay {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 8px 12px;
+        gap: 8px;
+        background-color: rgba(26, 14, 45, 0.95);
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Hide DISCOVER text on other cards, show only arrow */
+    .other-card .discover-text-small {
+        display: none;
     }
     
     .other-card.bottom-left {
-        grid-column: 1;
+        grid-column: auto;
+        margin-top: 0;
     }
     
     
     .other-works-text {
         padding: 0 10px;
     }
+    
+    /* Center "Some other works" title on mobile */
+    .other-works .section-title {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    /* Add bottom spacing for footer to avoid overlap with bottom navbar */
+    .decorative-footer {
+        padding-bottom: calc(90px + env(safe-area-inset-bottom));
+    }
 }
 
 @media (max-width: 480px) {
     .works-main {
-        padding: 0 10px 50px;
+        padding: 0 15px 50px;
     }
     
     .section-title {
-        font-size: 24px;
+        font-size: 25px;
+        margin: 15px 0 15px 0;
+    }
+    
+    .section-title-star {
+        width: 16px;
+        height: 16px;
+    }
+    
+    /* Allow odysseus card overlay to overflow downward on mobile */
+    .odysseus-card.work-card {
+        overflow: visible !important;
+    }
+    
+    .odysseus-card img {
+        max-height: 300px;
     }
     
     .odysseus-title {
-        font-size: 28px;
+        font-size: 24px;
+    }
+    
+    /* CTA strip: wider width, centered, half on card half below */
+    .odysseus-overlay {
+        width: 75% !important;
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(35px);
+        border-radius: 20px;
+    }
+    
+    .odysseus-title {
+        text-align: center;
+        margin-bottom: 0;
+    }
+    
+    .discover-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .discover-btn-merged {
+        height: 40px;
+    }
+    
+    .discover-icon-container {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .discover-text {
+        font-size: 10px;
+        padding: 0 12px 0 8px;
     }
     
     .discover-btn.circular {
@@ -748,13 +976,60 @@ body#content {
         font-size: 12px;
     }
     
+    .game-small-grid {
+        gap: 12px;
+    }
+    
+    .game-card {
+        flex: 0 0 calc(50% - 6px);
+        max-width: calc(50% - 6px);
+    }
+    
+    .game-card .work-card-overlay {
+        padding: 10px 8px;
+        gap: 4px;
+    }
+    
+    .card-name {
+        font-size: 13px;
+    }
+    
+    .discover-icon-container-small {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        min-height: 28px;
+    }
+    
+    .discover-btn-small-merged {
+        height: 28px;
+    }
+    
     .game-card,
     .other-card {
         max-width: 100%;
     }
     
+    /* Ensure overlay styling is consistent at smaller screens */
+    .other-card .work-card-overlay {
+        padding: 6px 10px;
+        gap: 6px;
+        border-radius: 0;
+    }
+    
     .work-card-overlay h4 {
         font-size: 18px;
+    }
+    
+    /* Center "Some other works" title on smaller mobile */
+    .other-works .section-title {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    /* Add bottom spacing for footer to avoid overlap with bottom navbar */
+    .decorative-footer {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
     }
 }
 

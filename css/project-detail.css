@@ -17,36 +17,44 @@ body#content {
     width: 100%;
 }
 
-/* Breadcrumb */
-.breadcrumb {
-    display: flex;
+/* Go Back Button */
+.go-back-btn {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 30px;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.breadcrumb a {
+    padding: 10px 16px;
     color: #b6aecf;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 300;
-    transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover {
-    color: #fff;
-}
-
-.breadcrumb-separator {
-    color: #b6aecf;
-    opacity: 0.7;
-}
-
-.breadcrumb-current {
-    color: #fff;
-    font-size: 14px;
     font-weight: 400;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.go-back-btn:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.go-back-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: currentColor;
+}
+
+.go-back-btn span {
+    line-height: 1;
+}
+
+/* Breadcrumb (hidden on project detail pages) */
+.breadcrumb {
+    display: none;
 }
 
 /* Project Title */
@@ -237,8 +245,15 @@ body#content {
         margin-bottom: 30px;
     }
 
-    .breadcrumb {
-        font-size: 12px;
+    .go-back-btn {
+        font-size: 13px;
+        padding: 8px 14px;
+        margin-bottom: 25px;
+    }
+    
+    .go-back-btn svg {
+        width: 18px;
+        height: 18px;
     }
 
     .info-card {
@@ -260,9 +275,16 @@ body#content {
         margin-bottom: 25px;
     }
 
-    .breadcrumb {
-        font-size: 11px;
+    .go-back-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+        margin-bottom: 20px;
         gap: 6px;
+    }
+    
+    .go-back-btn svg {
+        width: 16px;
+        height: 16px;
     }
 
     .hero-image,
@@ -309,6 +331,7 @@ body#content {
 
 /* Ensure all interactive elements are touchable */
 .try-it-btn,
+.go-back-btn,
 .breadcrumb a,
 .project-detail a {
     pointer-events: auto !important;

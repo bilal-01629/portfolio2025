@@ -593,9 +593,12 @@ body#content {
 .other-works .section-title {
     color: #ffffff;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: left;
+    margin: 0 auto 20px;
     width: 100%;
+    max-width: 800px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .other-works-text {
@@ -607,7 +610,6 @@ body#content {
     font-weight: 300;
     font-family: 'Roboto Mono', monospace;
     text-align: left;
-    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -902,7 +904,7 @@ body#content {
     }
     
     .section-title {
-        font-size: 25px;
+        font-size: 20px;
         margin: 15px 0 15px 0;
     }
     
